@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Data extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputNumber: 0
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
+  
+  state = {
+    inputNumber: 0
   }
 
-  handleSubmit() {
-    //axios POST
-    if(this.state.inputNumber){
-      axios.post('http://localhost:3000/api/data', {"number": this.state.inputNumber})
-        .then(res=>console.log(res.data))
-        .catch(err=> console.log(err))
+  handleSubmit = async (eve) => {
+    try {
+      eve.preventDefault();
+      //axios POST use async await
+      if(this.state.inputNumber){
+        let res = axios.post('http://localhost:3000/api/data', {"number": this.state.inputNumber})
+        console.log(res.data)
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
-  handleInputChange(e) {
+  handleInputChange = (e) => {
     this.setState({inputNumber: e.target.value});
-    console.log(this.state.inputNumber);
   }
 
   render() {
     return (
       <div>
-        <input onChange={this.handleInputChange} type='number' />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleInputChange} type='number' />
+          <button type='submit'>Submit</button>
+        </form>
       </div>
     )
   }

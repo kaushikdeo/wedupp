@@ -7,6 +7,4 @@ router.post('/', (req,res)=>{
   const number = req.body.number;
   console.log(number);
   res.json(number);
-})
-
-module.exports = router;
+});
