@@ -45,15 +45,13 @@ router.post('/', (req,res)=>{
   const number = req.body.number;
   axios.get('https://gitlab.com/snippets/1824628/raw')
     .then(response=>{
-      let words = splitIntoWords(response.data)
+      const words = splitIntoWords(response.data)
                   .filter(val=>!commons.includes(val));
-      let count = createWordMap(words);
-      let sort = sortByCount(count);
-      let tableData = sort.slice(0,number)
+      const count = createWordMap(words);
+      const sort = sortByCount(count);
+      const tableData = sort.slice(0,number)
       res.json(tableData);
     })
-  // console.log(number);
-  // res.json(number);
 });
 
 module.exports = router ;
