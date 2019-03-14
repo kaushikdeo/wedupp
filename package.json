@@ -4,7 +4,8 @@
   "description": "test for wedupp - mern stack",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "npm run start:dev --prefix client | node server.js",
+    "build:client": "npm run build --prefix client"
   },
   "author": "Kaushik Deo",
   "license": "MIT",
