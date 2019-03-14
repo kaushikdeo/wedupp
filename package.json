@@ -4,7 +4,7 @@
   "description": "test for wedupp - mern stack",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "Kaushik Deo",
   "license": "MIT",
