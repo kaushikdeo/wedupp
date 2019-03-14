@@ -8,3 +8,5 @@ router.post('/', (req,res)=>{
   console.log(number);
   res.json(number);
 });
+
+module.exports = router ;
