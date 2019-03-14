@@ -16,7 +16,7 @@ class Data extends Component {
       eve.preventDefault();
       //axios POST use async await
       if(this.state.inputNumber){
-        let res = await axios.post('http://localhost:3000/api/data', {"number": this.state.inputNumber})
+        const res = await axios.post('https://wedupp.herokuapp.com/api/data', {"number": this.state.inputNumber})
         this.setState({tableData: res.data})
       }
     } catch (error) {
