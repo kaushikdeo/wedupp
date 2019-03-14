@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Table } from 'reactstrap';
 
 class TableData extends Component {
 
@@ -6,7 +7,7 @@ class TableData extends Component {
     return this.props.data.map((item, i)=>{
       console.log(item);
       return (
-        <tr>
+        <tr key={i}>
           <td>{item.name}</td> 
           <td>{item.count}</td>
         </tr>
@@ -16,17 +17,17 @@ class TableData extends Component {
   render() {
     return (
       <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Word</th> 
-            <th>Count</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderTable()}
-        </tbody>
-      </table>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Word</th> 
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderTable()}
+          </tbody>
+        </Table>
       </div>
     )
   }
