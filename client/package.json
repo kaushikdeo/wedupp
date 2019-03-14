@@ -4,8 +4,8 @@
   "description": "react frontend for wedupp",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "rm -rf dist && webpack --mode production"
+    "start:dev": "webpack-dev-server --mode development --open --hot",
+    "build:prod": "rm -rf dist && webpack --mode production"
   },
   "author": "Kaushik Deo",
   "license": "ISC",
