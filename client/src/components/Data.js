@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import TableData from './TableData';
 
 class Data extends Component {
-  
+
   state = {
-    inputNumber: 0
+    inputNumber: 0,
+    tableData: []
   }
 
   handleSubmit = async (eve) => {
@@ -12,8 +14,8 @@ class Data extends Component {
       eve.preventDefault();
       //axios POST use async await
       if(this.state.inputNumber){
-        let res = axios.post('http://localhost:3000/api/data', {"number": this.state.inputNumber})
-        console.log(res.data)
+        let res = await axios.post('http://localhost:3000/api/data', {"number": this.state.inputNumber})
+        this.setState({tableData: res.data})
       }
     } catch (error) {
       console.log(error)
@@ -31,6 +33,9 @@ class Data extends Component {
           <input onChange={this.handleInputChange} type='number' />
           <button type='submit'>Submit</button>
         </form>
+        <div>
+          <TableData data={this.state.tableData} />
+        </div>
       </div>
     )
   }

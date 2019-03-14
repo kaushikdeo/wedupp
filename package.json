@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run start:dev --prefix client | node server.js",
-    "build:client": "npm run build --prefix client"
+    "build:client": "npm run build --prefix client",
+    "build:server": "node server.js"
   },
   "author": "Kaushik Deo",
   "license": "MIT",
