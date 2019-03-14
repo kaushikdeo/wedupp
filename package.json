@@ -1,0 +1,11 @@
+{
+  "name": "wedupptest",
+  "version": "1.0.0",
+  "description": "test for wedupp - mern stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kaushik Deo",
+  "license": "MIT"
+}
